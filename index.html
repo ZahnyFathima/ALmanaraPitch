@@ -347,45 +347,27 @@
   .ok80{position:absolute;left:1100px;top:550px;font-size:24px;font-weight:600;display:flex;gap:12px;align-items:center}
   .ok80 i{width:30px;height:30px;border-radius:50%;background:#21633e;color:#fff;font-style:normal;display:grid;place-items:center;font-size:17px}
 
-  /* --- B2G --- */
-  .chips{position:absolute;left:120px;top:200px;display:flex;gap:18px;align-items:center}
-  .chip3{position:relative;padding:12px 22px;border-radius:999px;font-size:22px;font-weight:600;border:1px solid rgba(11,11,12,.15)}
-  .chip3.sub{color:rgba(11,11,12,.45)}
-  .chip3.sub::after{content:"";position:absolute;left:10px;right:10px;top:50%;height:2px;background:#0b0b0c;transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease) .7s}
-  #scB2G.on .chip3.sub::after{transform:scaleX(1)}
-  .chip3.once{color:#fff;background:linear-gradient(90deg,#21633e,#2d7a50);border-color:transparent}
-  .hub{position:absolute;left:800px;top:530px;width:190px;height:190px;border-radius:50%;background:#14301f;translate:-50% -50%;
-    display:grid;place-items:center;box-shadow:0 30px 60px -30px rgba(20,48,31,.7);z-index:2}
-  .hub canvas{position:static;width:150px;height:150px}
-  .hub .ring{position:absolute;inset:-2px;border-radius:50%;border:2px solid rgba(201,149,59,.7);opacity:0}
-  .hub .ring.go{animation:ringOut 1.1s ease-out}
-  @keyframes ringOut{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.7)}}
-  .sys{position:absolute;translate:-50% -50%;padding:18px 24px;border-radius:16px;border:1px solid rgba(11,11,12,.14);background:#fff;
-    font-size:21px;font-weight:600;display:flex;align-items:center;gap:12px;white-space:nowrap;transition:opacity .5s ease}
-  .sys i{width:14px;height:14px;border-radius:4px;border:2px solid #0b0b0c}
-  #scB2G .wires{position:absolute;inset:0;width:1600px;height:900px;overflow:visible}
-  #scB2G .wires .draw{stroke:#0b0b0c;stroke-width:2;transition-duration:.8s}
-  #scB2G.s2 .sys,#scB2G.s2 .wires .w1{opacity:0;transition:opacity .4s ease}
-  #scB2G .wires .draw2{stroke:url(#ogB);stroke-width:2}
-  .dnode{position:absolute;transform:translate(-50%,-50%) scale(.6);opacity:0;padding:12px 18px;border-radius:999px;font-size:18px;font-weight:600;white-space:nowrap;
-    background:#fff;border:1px solid rgba(20,48,31,.35);box-shadow:0 10px 30px -18px rgba(20,48,31,.6);
-    transition:opacity .4s ease var(--d), transform .7s var(--spring) var(--d)}
-  #scB2G.s2 .dnode{opacity:1;transform:translate(-50%,-50%)}
-  .maint{position:absolute;left:800px;top:820px;translate:-50% 0;display:flex;align-items:center;gap:12px;font-size:19px;color:rgba(11,11,12,.7);white-space:nowrap}
-  .maint svg{width:24px;height:24px;fill:none;stroke:#21633e;stroke-width:2;stroke-linecap:round;animation:lic-spin 3s linear infinite}
-  .ev{position:absolute;right:120px;top:84px;width:400px;text-align:right}
-  .ev small{display:block;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,11,12,.45)}
-  .ev b{display:block;font-size:52px;font-weight:700;letter-spacing:-.04em;font-variant-numeric:tabular-nums;margin:2px 0 14px}
-  .ev .cost{height:12px;border-radius:6px;background:#e9e8e3;overflow:hidden}
-  .ev .cost i{display:block;height:100%;width:100%;margin-left:auto;background:linear-gradient(90deg,#21633e,#2d7a50);transition:width 3.4s cubic-bezier(.65,0,.35,1) .5s}
-  #scB2G.s2 .ev .cost i{width:28%}
-  .b2g{position:absolute;left:120px;top:104px;display:flex;align-items:baseline;gap:18px}
-  .b2g b{font-size:72px;font-weight:700;letter-spacing:-.05em;line-height:1;
-    background:linear-gradient(90deg,#21633e,#2d7a50);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .b2g span{font-size:20px;font-weight:500;color:rgba(11,11,12,.55)}
-  #scB2G .chips{top:206px}
-  .ev .cut{margin-top:14px;font-size:20px;font-weight:500;color:rgba(11,11,12,.7)}
-  .ev .cut b{display:inline;font-size:34px;margin:0 6px 0 0;color:#21633e;letter-spacing:-.03em}
+  /* --- B2G business model (static, no animation) --- */
+  #scB2G .bm{position:absolute;left:120px;top:270px;display:grid;grid-template-columns:repeat(4,320px);gap:40px}
+  #scB2G .bmc{height:440px;padding:28px 28px 30px;border-radius:22px;border:1px solid rgba(11,11,12,.1);background:#fff;display:flex;flex-direction:column}
+  #scB2G .bmc .n{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-size:17px;font-weight:700;color:#21633e;border:1.5px solid rgba(33,99,62,.35)}
+  #scB2G .bmc h3{margin-top:22px;font-size:26px;font-weight:600;letter-spacing:-.03em;line-height:1.15;white-space:nowrap}
+  #scB2G .bmc .tag{margin-top:10px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,11,12,.45);font-weight:500}
+  #scB2G .bmc ul{list-style:none;margin-top:26px;padding-top:22px;border-top:1px solid rgba(11,11,12,.08);display:flex;flex-direction:column;gap:16px}
+  #scB2G .bmc li{position:relative;padding-left:22px;font-size:19px;line-height:1.35;color:rgba(11,11,12,.72)}
+  #scB2G .bmc li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:#2d7a50}
+  #scB2G .bmc.rec{background:#14301f;border-color:transparent;color:#fff;box-shadow:0 30px 60px -30px rgba(20,48,31,.7)}
+  #scB2G .bmc.rec .n{color:#14301f;background:#c9953b;border-color:transparent}
+  #scB2G .bmc.rec .tag{color:#c9953b}
+  #scB2G .bmc.rec ul{border-top-color:rgba(255,255,255,.14)}
+  #scB2G .bmc.rec li{color:rgba(255,255,255,.82)}
+  #scB2G .bmc.rec li::before{background:#c9953b}
+  #scB2G .split{position:absolute;left:120px;top:742px;width:1400px;height:40px}
+  #scB2G .split .one{position:absolute;left:0;width:1040px;top:0;border-top:2px solid rgba(11,11,12,.18)}
+  #scB2G .split .rc{position:absolute;left:1080px;width:320px;top:0;border-top:2px solid #c9953b}
+  #scB2G .split span{position:absolute;top:12px;font-size:15px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+  #scB2G .split .l1{left:0;color:rgba(11,11,12,.45)}
+  #scB2G .split .l2{left:1080px;color:#a67a2c}
 
   /* --- yes / thank you --- */
   .qq{position:absolute;left:0;right:0;top:250px;text-align:center;font-size:52px;font-weight:600;letter-spacing:-.03em;color:rgba(11,11,12,.75)}
@@ -588,15 +570,20 @@
       <div class="ok80 rv" style="--d:2.9s"><i>✓</i>without skipping anything important</div>
     </div></section>
     <section class="scene" id="scB2G"><div class="frame">
-      <div class="eb rv">Our business model</div>
-      <div class="b2g rv" style="--d:.1s"><b>B2G</b><span>Business-to-Government</span></div>
-      <div class="chips"><span class="chip3 sub rv" style="--d:.2s">Subscription</span><span class="chip3 once rv" style="--d:1.2s">Bought once · plugs into what you have</span></div>
-      <svg class="wires" viewBox="0 0 1600 900"><defs><linearGradient id="ogB" gradientUnits="userSpaceOnUse" x1="250" y1="0" x2="1350" y2="0"><stop offset="0" stop-color="#c9953b"/><stop offset="1" stop-color="#2d7a50"/></linearGradient></defs><path class="draw w1" pathLength="1" style="--d:1.20s" d="M800 530C590 530 590 380 490 380"/><path class="draw w1" pathLength="1" style="--d:1.45s" d="M800 530C590 530 590 690 490 690"/><path class="draw w1" pathLength="1" style="--d:1.70s" d="M800 530C1010 530 1010 380 1110 380"/><path class="draw w1" pathLength="1" style="--d:1.95s" d="M800 530C1010 530 1010 690 1110 690"/><path class="draw2" pathLength="1" style="--d:0.25s" d="M800 530L800 295"/><path class="draw2" pathLength="1" style="--d:0.63s" d="M800 530L1168 364"/><path class="draw2" pathLength="1" style="--d:1.01s" d="M800 530L1320 530"/><path class="draw2" pathLength="1" style="--d:1.39s" d="M800 530L1168 696"/><path class="draw2" pathLength="1" style="--d:1.77s" d="M800 530L800 765"/><path class="draw2" pathLength="1" style="--d:2.15s" d="M800 530L432 696"/><path class="draw2" pathLength="1" style="--d:2.53s" d="M800 530L280 530"/><path class="draw2" pathLength="1" style="--d:2.91s" d="M800 530L432 364"/></svg>
-      <div class="sys rv" style="left:380px;top:380px;--d:1.00s"><i></i>Identity system</div><div class="sys rv" style="left:380px;top:690px;--d:1.25s"><i></i>Case management</div><div class="sys rv" style="left:1220px;top:380px;--d:1.50s"><i></i>Data platform</div><div class="sys rv" style="left:1220px;top:690px;--d:1.75s"><i></i>Government cloud</div>
-      <div class="hub rv" style="--d:.5s"><canvas class="emb" width="300" height="300"></canvas><div class="ring" id="hubRing"></div></div>
-      <div class="dnode" style="left:800px;top:295px;--d:0.35s">Social &amp; Civil Services</div><div class="dnode" style="left:1168px;top:364px;--d:0.73s">Health</div><div class="dnode" style="left:1320px;top:530px;--d:1.11s">Identity</div><div class="dnode" style="left:1168px;top:696px;--d:1.49s">Education</div><div class="dnode" style="left:800px;top:765px;--d:1.87s">Finance</div><div class="dnode" style="left:432px;top:696px;--d:2.25s">Transport</div><div class="dnode" style="left:280px;top:530px;--d:2.63s">Interior</div><div class="dnode" style="left:432px;top:364px;--d:3.01s">Human Resources</div>
-      <div class="maint rv" style="--d:2.4s"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8.6"/><path d="M20 4v4.6h-4.6"/><path d="M20 12a8 8 0 0 1-13.7 5.7L4 15.4"/><path d="M4 20v-4.6h4.6"/></svg>We handle maintenance · rules and tests kept current</div>
-      <div class="ev rv2" style="--d:.2s"><small>Approved evidence reused</small><b id="evN">0</b><small style="margin-bottom:8px">Set-up cost for the next department</small><div class="cost"><i></i></div><div class="cut"><b id="cutN">0%</b>set-up cost per new department</div></div>
+      <div class="eb">Our B2G business model</div>
+      <div class="ttl">Bought once. <em>Paid for as it grows.</em></div>
+      <div class="bm">
+        <div class="bmc"><div class="n">1</div><h3>One-time licence</h3><div class="tag">One-time</div>
+          <ul><li>Government buys Manara once</li><li>Owns it, runs it on its own systems</li></ul></div>
+        <div class="bmc"><div class="n">2</div><h3>Setup &amp; integration</h3><div class="tag">One-time</div>
+          <ul><li>One-time fee to install inside the government cloud</li></ul></div>
+        <div class="bmc"><div class="n">3</div><h3>Expansion licences</h3><div class="tag">Per department</div>
+          <ul><li>Each new department added for a one-time fee</li></ul></div>
+        <div class="bmc rec"><div class="n">4</div><h3>Paid services</h3><div class="tag">Ongoing</div>
+          <ul><li>Paid upgrades when regulations change</li><li>Paid support and maintenance when needed</li><li>Staff training for reviewers and departments</li></ul></div>
+      </div>
+      <div class="split"><div class="one"></div><div class="rc"></div><span class="l1">One-time revenue</span><span class="l2">Ongoing revenue</span></div>
+      <div class="foot">No subscription · the government owns it</div>
     </div></section>
     <section class="scene" id="scYes"><div class="frame">
       <div class="qq rv">“Half of government should run on AI agents.”</div>
@@ -1070,7 +1057,7 @@ window.PIPE=(function(){
   var pipeL  = document.getElementById('pipeL');
   var covered = false;
 
-  var MAX = 28, step = 0, timers = [], rafs = [];
+  var MAX = 27, step = 0, timers = [], rafs = [];
   for (var i = 0; i < MAX; i++) prog.appendChild(document.createElement('i'));
   function rand(a, b) { return a + Math.random() * (b - a); }
   function clamp(x, a, b) { return x < a ? a : x > b ? b : x; }
@@ -1469,7 +1456,7 @@ window.PIPE=(function(){
   }
   function resetScenes() {
     Object.keys(SC).forEach(function (k) { SC[k].classList.remove('on'); SC[k].style.zIndex = ''; }); zTop = 7;
-    ['scB2G', 'scYes'].forEach(function (k) { SC[k].classList.remove('s2'); });
+    ['scYes'].forEach(function (k) { SC[k].classList.remove('s2'); });
     SC.scCheck.classList.remove('s2', 's3'); SC.scForm.classList.remove('ready');
     q('#mzTrail').innerHTML = ''; q('#mzCal').textContent = 'Week 1';
     document.querySelectorAll('#scCheck .stamp').forEach(function (st) { st.className = 'stamp'; });
@@ -1525,18 +1512,9 @@ window.PIPE=(function(){
     24: function () { scene('sc80'); },
     /* "And our B2G model isn't a subscription…" */
     25: function () { scene('scB2G'); },
-    /* "Every department that joins makes it smarter for the rest…" */
-    26: function (instant) {
-      SC.scB2G.classList.add('s2');
-      countTo(q('#evN'), 1284, 3400, function (v) { return Math.round(v).toLocaleString('en-US'); }, instant, 400);
-      countTo(q('#cutN'), 72, 3400, function (v) { return '−' + Math.round(v) + '%'; }, instant, 500);
-      if (!instant) for (var i = 0; i < 8; i++) later(function () {
-        var r = q('#hubRing'); r.classList.remove('go'); void r.offsetWidth; r.classList.add('go');
-      }, 450 + i * 380);
-    },
     /* "So next time someone says half of government…" */
-    27: function () { scene('scYes'); },
-    28: function () { SC.scYes.classList.add('s2'); }
+    26: function () { scene('scYes'); },
+    27: function () { SC.scYes.classList.add('s2'); }
   };
   function pipeStep(idx) {
     return function (instant) {
